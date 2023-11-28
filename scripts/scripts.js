@@ -11,7 +11,7 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 var modelName = "XYZ";
-var duration = 0;
+var duration = 0.0;
 /****************** helper function ******************/
 /* create a function called recalculate() which will
     - create a variable to represent the calculated-cost span element. That will look something like:
@@ -25,14 +25,13 @@ var duration = 0;
 // INSERT YOUR CODE HERE
 function recalculate() {
   let costLabel = document.getElementById("calculated-cost");
-  let total_cost = 0;
+  let total_cost = 0.0;
   if (modelName == "XYZ") {
     total_cost = duration * 100;
   } else if (modelName == "CPRG") {
     total_cost = duration * 213;
   }
   costLabel.innerHTML = total_cost;
-  console.log(total_cost);
 }
 
 /****************** model button logic ******************/
@@ -51,14 +50,14 @@ function recalculate() {
 var modelButton = document.getElementById("model-button");
 
 function changeModel() {
-  var model_text = document.getElementById("model-text");
+  let model_text = document.getElementById("model-text");
 
   if (modelName == "XYZ") {
     modelName = "CPRG";
   } else if (modelName == "CPRG") {
     modelName = "XYZ";
   }
-  model_text.innerHTML = modelName;
+  model_text.innerHTML = "Model " + modelName;
 
   recalculate();
 }
@@ -80,9 +79,8 @@ modelButton.addEventListener("click", changeModel);
 var durationBtn = document.getElementById("duration-button");
 
 function changeDuration() {
-  console.log("changeDuration");
-  var durationText = document.getElementById("duration-text");
-  duration = prompt("Enter new duration");
+  let durationText = document.getElementById("duration-text");
+  duration = window.prompt("Enter new duration");
   durationText.innerHTML = duration;
   recalculate();
 }
