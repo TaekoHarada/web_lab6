@@ -25,7 +25,7 @@ var duration = 0;
 // INSERT YOUR CODE HERE
 function recalculate() {
   let costLabel = document.getElementById("calculated-cost");
-
+  let total_cost = 0;
   if (modelName == "XYZ") {
     total_cost = duration * 100;
   } else if (modelName == "CPRG") {
